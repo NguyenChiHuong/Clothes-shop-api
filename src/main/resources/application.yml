@@ -1,0 +1,45 @@
+server:
+  port:8085
+
+spring.datasource:
+  url: jdbc:postgresql://localhost:5432/shopweb
+  username: postgres
+  password: 123456
+  driver-class-name: org.postgresql.Driver
+
+#spring.datasource:
+#  url: jdbc:mysql://localhost:3306/shopweb
+#  username: root
+#  password: 123456
+#  driver-class-name: com.mysql.cj.jdbc.Driver
+
+api:
+  prefix: api/v1
+
+jwt:
+  expiration: 2592000 #30 days = 30 * 24 * 60 *60
+  secretKey: tRDG1vgBnOip0eeCLx3XGul95+hooxed24+IBiulAwQ=
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+#        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+    generate-ddl: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  messages:
+    basename: i18n/message
+    encoding: UTF-8
+
+
+
